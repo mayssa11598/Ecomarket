@@ -43,11 +43,11 @@ It was built as a academic project to practice relational database design, sessi
 
 | Home | Product catalog |
 |------|-----------------|
-| ![Home](docs/home.png) | ![Catalog](docs/catalog.png) |
+| ![Home](images/home.png) | ![Catalog](images/catalog.png) |
 
 | Cart | Admin dashboard |
 |------|-----------------|
-| ![Cart](docs/cart.png) | ![Admin](docs/admin.png) |
+| ![Cart](images/cart.png) | ![Admin](images/admin.png) |
 
 ---
 
