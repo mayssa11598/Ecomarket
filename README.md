@@ -25,7 +25,6 @@
 - [Installation](#-installation)
 - [Configuration](#-configuration)
 - [Security](#-security)
-- [Roadmap](#-roadmap)
 - [Author](#-author)
 
 ---
@@ -187,22 +186,11 @@ define('PER_PAGE', 9);   // products per page
 
 ---
 
-## 🗺 Roadmap
-
-- [ ] Online payment integration
-- [ ] Image upload from the admin panel
-- [ ] Product search and advanced filters
-- [ ] CSRF tokens and login rate limiting
-- [ ] Email notifications for order updates
-- [ ] Migration to an MVC framework (Laravel / Symfony)
-
----
-
 ## 👩‍💻 Author
 
-**Mayssa**, 2nd-year Computer Science student at ISI (Institut Supérieur d'Informatique)
+**Mayssa Ahmed**,  Computer Science student at ISI (Institut Supérieur d'Informatique)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/your-profile)
+[![LinkedIn](https://www.linkedin.com/in/mayssa-ahmed-12ab59339/)
 
 ---
 
