@@ -23,8 +23,6 @@
 - [Database Schema](#-database-schema)
 - [Project Structure](#-project-structure)
 - [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Security](#-security)
 - [Author](#-author)
 
 ---
@@ -135,56 +133,25 @@ ecomarket/
 
 ## 🚀 Installation
 
-**Prerequisites:** PHP 8.0+, MySQL/MariaDB, Apache (or XAMPP/WAMP).
+1. **Clone the repository** into your web server directory (e.g. `htdocs/` for XAMPP)
+   ```bash
+   git clone https://github.com/<your-username>/ecomarket.git
+   ```
+2. **Create the database** and import the SQL file
+   ```sql
+   CREATE DATABASE ecomarket CHARACTER SET utf8mb4;
+   ```
+   Then import `ecomarketnv.sql` via phpMyAdmin or:
+   ```bash
+   mysql -u root ecomarket < ecomarketnv.sql
+   ```
+3. **Configure the connection** in `includes/config.php` (host, database name, user, password, `SITE_URL`)
+4. **Start Apache and MySQL**, then open:
+   ```
+   http://localhost/ecomarket
+   ```
+5. **Admin access**: sign in at `/admin/login.php` with the admin account included in the sample data.
 
-```bash
-# 1. Clone the repo into your web root (e.g. htdocs for XAMPP)
-git clone https://github.com/<your-username>/ecomarket.git
-cd ecomarket
-
-# 2. Import the database (the dump creates the `ecomarket` database)
-mysql -u root -p < ecomarketnv.sql
-```
-
-You can also import `ecomarketnv.sql` through **phpMyAdmin**.
-
-```text
-# 3. Start Apache + MySQL, then visit:
-http://localhost/ecomarket
-```
-
-**Admin panel:** `http://localhost/ecomarket/admin/login.php`
-Use the admin account from the sample data (`admin@ecomarket.tn`). Change its password after your first login.
-
----
-
-## ⚙ Configuration
-
-Edit `includes/config.php`:
-
-```php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'ecomarket');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('SITE_URL', 'http://localhost/ecomarket');
-define('PER_PAGE', 9);   // products per page
-```
-
-> ⚠️ Never deploy with the default `root` user and an empty password.
-
----
-
-## 🔒 Security
-
-- PDO **prepared statements** everywhere (SQL injection protection)
-- Passwords hashed with **bcrypt**
-- Output escaped through an `e()` helper (`htmlspecialchars`) against XSS
-- Session-based auth with a `requireAdmin()` guard on every admin page
-- **Database transactions** on checkout to keep orders and stock consistent
-- Integrity check before deleting products referenced by orders
-
----
 
 ## 👩‍💻 Author
 
