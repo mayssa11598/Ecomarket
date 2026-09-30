@@ -190,7 +190,7 @@ define('PER_PAGE', 9);   // products per page
 
 **Mayssa Ahmed**,  Computer Science student at ISI (Institut Supérieur d'Informatique)
 
-[![LinkedIn](https://www.linkedin.com/in/mayssa-ahmed-12ab59339)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mayssa-ahmed-12ab59339/)
 
 ---
 
