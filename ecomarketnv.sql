@@ -2,16 +2,15 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 28, 2026 at 11:01 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-CREATE DATABASE IF NOT EXISTS ecomarket;
-USE ecomarket;
+-- Hôte : 127.0.0.1
+-- Généré le : mer. 30 sep. 2026 à 15:32
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecomarket`
+-- Base de données : `ecomarket`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structure de la table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -37,7 +36,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Déchargement des données de la table `categories`
 --
 
 INSERT INTO `categories` (`id`, `nom`, `description`, `icone`, `created_at`) VALUES
@@ -50,7 +49,7 @@ INSERT INTO `categories` (`id`, `nom`, `description`, `icone`, `created_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Structure de la table `clients`
 --
 
 CREATE TABLE `clients` (
@@ -65,19 +64,18 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `clients`
+-- Déchargement des données de la table `clients`
 --
 
 INSERT INTO `clients` (`id`, `nom`, `email`, `mot_de_passe`, `adresse`, `telephone`, `is_admin`, `created_at`) VALUES
 (1, 'Admin EcoMarket', 'admin@ecomarket.tn', '$2y$10$DeIUlbtBLFw2nfXnoNtV6eY5HEgA7n4F42ZJf4IdOcJAbu5okQXyK', 'Tunis, Tunisie', '+216 70 000 000', 1, '2026-04-25 13:28:36'),
 (2, 'Sana Ben Ali', 'sana@email.tn', '$2y$10$pmoS70WSXVbJ0iQIKWkmXeKbl4GCSI41tt2rf2HFVOu9hOaio1Ueu', '12 Rue de la République, Tunis', '+216 22 111 222', 0, '2026-04-25 13:28:36'),
-(3, 'Karim Trabelsi', 'karim@email.tn', '$2y$10$TTxKlAP2l2zNRtx7dmC7NuEAk1BCwQssBuqNeHkj8zxgDKm9y9QSm', '45 Avenue Habib Bourguiba, Sfax', '+216 25 333 444', 0, '2026-04-25 13:28:36'),
-(4, 'Mayssa Ahmed', 'mayssa@gmail.com', '$2y$10$ZEXVm1a8cnF9MlLyDfx3C..VhxeIo/O0OywynsIutQa0UPbafgMn.', 'mourouj 1', '+216 96788033', 0, '2026-04-25 19:38:22');
+(3, 'Karim Trabelsi', 'karim@email.tn', '$2y$10$TTxKlAP2l2zNRtx7dmC7NuEAk1BCwQssBuqNeHkj8zxgDKm9y9QSm', '45 Avenue Habib Bourguiba, Sfax', '+216 25 333 444', 0, '2026-04-25 13:28:36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commandes`
+-- Structure de la table `commandes`
 --
 
 CREATE TABLE `commandes` (
@@ -90,7 +88,7 @@ CREATE TABLE `commandes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `commandes`
+-- Déchargement des données de la table `commandes`
 --
 
 INSERT INTO `commandes` (`id`, `client_id`, `date_cmd`, `statut`, `total`, `notes`) VALUES
@@ -102,7 +100,7 @@ INSERT INTO `commandes` (`id`, `client_id`, `date_cmd`, `statut`, `total`, `note
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commandes_produits`
+-- Structure de la table `commandes_produits`
 --
 
 CREATE TABLE `commandes_produits` (
@@ -114,7 +112,7 @@ CREATE TABLE `commandes_produits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `commandes_produits`
+-- Déchargement des données de la table `commandes_produits`
 --
 
 INSERT INTO `commandes_produits` (`id`, `commande_id`, `produit_id`, `quantite`, `prix_unitaire`) VALUES
@@ -129,7 +127,7 @@ INSERT INTO `commandes_produits` (`id`, `commande_id`, `produit_id`, `quantite`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `expeditions`
+-- Structure de la table `expeditions`
 --
 
 CREATE TABLE `expeditions` (
@@ -143,7 +141,7 @@ CREATE TABLE `expeditions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `expeditions`
+-- Déchargement des données de la table `expeditions`
 --
 
 INSERT INTO `expeditions` (`id`, `commande_id`, `date_expedition`, `adresse_livraison`, `statut`, `transporteur`, `numero_suivi`) VALUES
@@ -153,7 +151,7 @@ INSERT INTO `expeditions` (`id`, `commande_id`, `date_expedition`, `adresse_livr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produits`
+-- Structure de la table `produits`
 --
 
 CREATE TABLE `produits` (
@@ -169,12 +167,12 @@ CREATE TABLE `produits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `produits`
+-- Déchargement des données de la table `produits`
 --
 
 INSERT INTO `produits` (`id`, `nom`, `description`, `prix`, `stock`, `image`, `categorie_id`, `en_vedette`, `created_at`) VALUES
 (1, 'Savon Artisanal Argan', 'Savon 100% naturel à l\'huile d\'argan, fait à la main à Tunis.', 18.90, 50, 'https://savonnerieblanchou.ca/cdn/shop/files/savon-a-lhuile-dargan_612x408.jpg?v=1750017853', 2, 1, '2026-04-25 13:28:36'),
-(2, 'Tote Bag Coton Bio', 'Sac réutilisable en coton biologique certifié GOTS, couture renforcée.', 24.50, 79, 'https://kadimage.fr/1048543-large_default/tote-bag-en-coton-bio-100-g-m2.jpg', 3, 1, '2026-04-25 13:28:36'),
+(2, 'Tote Bag Coton Bio', 'Sac réutilisable en coton biologique certifié GOTS, couture renforcée.', 24.50, 79, 'https://c.bonfireassets.com/static/product-type/6c8bdf76-412f-4607-b944-505de2f9099c/header-image/95addbe5278b4a9eac10f82a80d51f1e/Header-image---Recycled-Cotton-Tote-Bag.png', 3, 1, '2026-04-25 13:28:36'),
 (3, 'Kit Zéro Déchet', 'Ensemble complet : brosse bambou, gourde inox, paille réutilisable.', 59.00, 30, 'https://i.etsystatic.com/18244890/r/il/1f1a6d/3046281385/il_fullxfull.3046281385_nunt.jpg', 1, 1, '2026-04-25 13:28:36'),
 (4, 'Huile d\'Olive Biologique', 'Huile d\'olive vierge extra, pressée à froid, certification bio.', 35.00, 100, 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80', 5, 1, '2026-04-25 13:28:36'),
 (5, 'Bougies Cire d\'Abeille', 'Bougies artisanales à la cire d\'abeille, sans paraffine.', 22.00, 40, 'https://lafabriquedelabeille.fr/cdn/shop/files/bougie-cire-abeille-naturelle-francaise.jpg?v=1705656566&width=1500', 2, 0, '2026-04-25 13:28:36'),
@@ -182,35 +180,34 @@ INSERT INTO `produits` (`id`, `nom`, `description`, `prix`, `stock`, `image`, `c
 (7, 'Savon Vaisselle Solide', 'Bloc de savon vaisselle zéro déchet, 200 lavages, 100% végétal.', 12.50, 90, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnjumRFVRhdq_EHfiHFwBYpBozpkalEWTxmg&s', 4, 0, '2026-04-25 13:28:36'),
 (8, 'Miel Artisanal des Monts', 'Miel pur de montagne, apiculture raisonnée, pot en verre consignable.', 28.00, 35, 'https://images.unsplash.com/photo-1471943311424-646960669fbc?w=400&q=80', 5, 0, '2026-04-25 13:28:36'),
 (9, 'Panier Osier Traditionnel', 'Panier tressé à la main, fibres naturelles, durable et élégant.', 55.00, 20, 'https://image.made-in-china.com/202f0j00ripMCnOEZkoY/Rustic-Shallow-Elegant-Charming-Traditional-Wicker-Willow-Rattan-Basket.webp', 2, 0, '2026-04-25 13:28:36'),
-(10, 'Crème Visage Aloé Vera', 'Crème hydratante bio à l\'aloé vera, sans conservateurs chimiques.', 32.00, 45, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVlROVDR36NQTuEz_Lbjk2VWPFJuQiQ0Vjg&s', 4, 1, '2026-04-25 13:28:36'),
-(11, 'Savon Artisanal Argan', '', 29.99, 10, 'https://savonnerieblanchou.ca/cdn/shop/files/savon-a-lhuile-dargan_612x408.jpg?v=1750017853', 4, 0, '2026-04-28 20:49:30');
+(10, 'Crème Visage Aloé Vera', 'Crème hydratante bio à l\'aloé vera, sans conservateurs chimiques.', 32.00, 45, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVlROVDR36NQTuEz_Lbjk2VWPFJuQiQ0Vjg&s', 4, 1, '2026-04-25 13:28:36');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `categories`
+-- Index pour la table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `clients`
+-- Index pour la table `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `commandes`
+-- Index pour la table `commandes`
 --
 ALTER TABLE `commandes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_commande_client` (`client_id`);
 
 --
--- Indexes for table `commandes_produits`
+-- Index pour la table `commandes_produits`
 --
 ALTER TABLE `commandes_produits`
   ADD PRIMARY KEY (`id`),
@@ -218,84 +215,84 @@ ALTER TABLE `commandes_produits`
   ADD KEY `fk_cp_produit` (`produit_id`);
 
 --
--- Indexes for table `expeditions`
+-- Index pour la table `expeditions`
 --
 ALTER TABLE `expeditions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `commande_id` (`commande_id`);
 
 --
--- Indexes for table `produits`
+-- Index pour la table `produits`
 --
 ALTER TABLE `produits`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_produit_categorie` (`categorie_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT pour la table `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `commandes`
+-- AUTO_INCREMENT pour la table `commandes`
 --
 ALTER TABLE `commandes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `commandes_produits`
+-- AUTO_INCREMENT pour la table `commandes_produits`
 --
 ALTER TABLE `commandes_produits`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `expeditions`
+-- AUTO_INCREMENT pour la table `expeditions`
 --
 ALTER TABLE `expeditions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `produits`
+-- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `commandes`
+-- Contraintes pour la table `commandes`
 --
 ALTER TABLE `commandes`
   ADD CONSTRAINT `fk_commande_client` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `commandes_produits`
+-- Contraintes pour la table `commandes_produits`
 --
 ALTER TABLE `commandes_produits`
   ADD CONSTRAINT `fk_cp_commande` FOREIGN KEY (`commande_id`) REFERENCES `commandes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_cp_produit` FOREIGN KEY (`produit_id`) REFERENCES `produits` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `expeditions`
+-- Contraintes pour la table `expeditions`
 --
 ALTER TABLE `expeditions`
   ADD CONSTRAINT `fk_expedition_commande` FOREIGN KEY (`commande_id`) REFERENCES `commandes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `produits`
+-- Contraintes pour la table `produits`
 --
 ALTER TABLE `produits`
   ADD CONSTRAINT `fk_produit_categorie` FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`) ON UPDATE CASCADE;
