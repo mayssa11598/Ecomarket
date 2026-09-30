@@ -100,8 +100,6 @@ categories ──< produits ──< commandes_produits >── commandes >──
 | `commandes_produits` | Order lines (quantity and unit price at time of purchase)    |
 | `expeditions`        | Shipments (carrier, tracking number, delivery address)       |
 
-The SQL dump (`ecomarketnv.sql`) includes the schema and sample data.
-
 ---
 
 ## 📁 Project Structure
