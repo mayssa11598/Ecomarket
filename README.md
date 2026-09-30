@@ -31,13 +31,11 @@
 
 EcoMarket is a full-stack web application where customers can browse and buy organic, artisanal, and local products, and where administrators manage the whole business: catalog, orders, shipments, customers, and sales reports.
 
-It was built as a academic project to practice relational database design, session-based authentication, and business-oriented SQL reporting in plain PHP (no framework).
+It was built as a academic project to practice relational database design, session-based authentication, and business-oriented SQL reporting in plain PHP .
 
 ---
 
 ## 📸 Screenshots
-
-> Add your screenshots to a `docs/` folder and update the paths below.
 
 | Home | Product catalog |
 |------|-----------------|
